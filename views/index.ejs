@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://www.gstatic.com/firebasejs/3.1.0/firebase.js"></script>
+
+    <!-- Load the jQuery library, which we'll use to manipulate HTML elements with Javascript. -->
+    <script src="https://code.jquery.com/jquery-2.2.0.min.js"></script>
+
+    <!-- Load Bootstrap stylesheet, which will is CSS that makes everything prettier and also responsive (aka will work on all devices of all sizes). -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="style.css">
+    <title>Sign Up form</title>
+</head>
+<body>
+
+    <button class="open-button" id="open-button" onclick="openForm()">Open Form</button>
+
+
+    <div class="container form-popup" id="myform">
+        <div class="form-container">
+            <div class="image-section">
+                <img src="images/Capture.PNG">
+            </div>
+
+            <div class="form-section">
+                <form id="contactform" action="/" method="POST">
+                    <h2>FORM</h2>
+                    <div>
+                        <label for="">Full Name</label>
+                        <input type="text" id="name" name="name" placeholder="Enter name...">
+                    </div>
+                    <div>
+                        <label for="">Email</label>
+                        <input type="email" id="email" name="email" placeholder="Email address...">
+                    </div>
+                    <div>
+                        <label for="">Contact</label>
+                        <input type="text" id="number" name="number" placeholder="Enter phone number...">
+                    </div>
+                    <div>
+                        <label for="">Message</label>
+                        <input type="text" id="message" name="message" placeholder="Enter message....">
+                  </div>
+                   
+                    <div class="button">
+                        <button value="submit" class="signup" id="submit">Submit</button>
+                        <!-- <button value="submit" class="signin">Sign In <i class="fa fa-arrow-right"></i></button> -->
+                        <button type="button" class="btn cancel" id="close-button" onclick="closeForm()">Close</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+    <script src="../app.js"></script>
+
+ 
+<script src="https://www.gstatic.com/firebasejs/7.17.2/firebase-app.js"></script>
+
+<script src="https://www.gstatic.com/firebasejs/7.17.2/firebase-analytics.js"></script>
+
+
+<!-- <script>
+
+const firebaseConfig = {
+    apiKey: "AIzaSyA7k7O_hDQmQUegD8CLatQCRAhT-op-_Wo",
+    authDomain: "form-with-nodemailer.firebaseapp.com",
+    databaseURL: "https://form-with-nodemailer.firebaseio.com",
+    projectId: "form-with-nodemailer",
+    storageBucket: "form-with-nodemailer.appspot.com",
+    messagingSenderId: "6592522502",
+    appId: "1:6592522502:web:0083486478c45515d1d687",
+    measurementId: "G-LXX6YW6P9K"
+  };
+  firebase.initializeApp(firebaseConfig);
+
+    
+var db = firebase.firestore();
+    const name = document.querySelector("#name").value;
+    const email = document.querySelector("#email").value;
+    const number = document.querySelector("#number").value;
+    const message = document.querySelector("#message").value;
+    const save=document.querySelector("#submit");
+save.addEventListener("click",function() {
+    db.collection("query").add({
+              name:name,
+              email:email,
+              number:number,
+              message:message
+    }).then(function() {
+
+    console.log("Document successfully wriiten!");
+
+})
+.catch(function(error) {
+  // The document probably doesn't exist.
+  console.error("Error writing document: ", error);
+});
+}); 
+</script> -->
+
+
+</body>
+</html>
